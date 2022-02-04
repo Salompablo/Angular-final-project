@@ -1,12 +1,14 @@
+import { HomeComponent } from './component/home/home.component';
 import { ProductComponent } from './component/product/product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './component/cart/cart.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'products', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'products', component: ProductComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'home', component: HomeComponent}
 ];
 
 @NgModule({

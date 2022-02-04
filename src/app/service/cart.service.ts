@@ -10,6 +10,7 @@ export class CartService {
 
   public cartItemList : any = []
   public productList = new BehaviorSubject<any>([]);
+  public search = new BehaviorSubject<string>("");
 
   constructor() { }
 
@@ -38,6 +39,7 @@ export class CartService {
     this.cartItemList.map((a:any)=>{
       wholeTotal += a.total;
     })
+    return wholeTotal;
   }
 
   /** Función para quitar un producto del carrito */
@@ -48,6 +50,7 @@ export class CartService {
         this.cartItemList.splice(index,1);
       }
     })
+    this.productList.next(this.cartItemList);
   }
 
   /** Función para remover todos los productos del carrito */

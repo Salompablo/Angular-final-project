@@ -8,15 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  public product : any = [];
+  public products : any = [];
   public wholeTotal : number = 0;
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
     this.cartService.getProducts()
     .subscribe(res=>{
-      this.product = res;
+      this.products = res;
+      this.wholeTotal = this.cartService.getTotalPrice();
     })
+  }
+
+  removeItem(item: any){
+    this.cartService.removeCartItem(item);
+  }
+
+  emptyCart(){
+    this.cartService.removeAllCart();
   }
 
 }

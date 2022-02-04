@@ -1,17 +1,21 @@
 <header>
-    <div class="navbar navbar-dark bg-primary shadow-sn">
+    <div class="navbar navbar-dark bg-success shadow-sn">
         <div class="navbar-brand align-item-center d-flex">
             <i class="fas fa-shipping-fast">&nbsp;
     
             </i>
-            <strong>The buyer</strong>
+            <strong>The Buyer</strong>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search for products">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search for products">
             </div>
+            <span>
+                <button class="btn btn-success"routerLink="/home">Home </button>
+                <button class="btn btn-success" routerLink="/products">Productos</button>
+            </span>
             <span class="fas fa-search search-icon"></span>
 
         </div>
-        <button routerLink="cart" class="btn btn-primary">
+        <button routerLink="cart" class="btn btn-success">
             <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
             <div class="badge bg-danger">{{totalItem}}</div>
         </button>

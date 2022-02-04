@@ -7,18 +7,29 @@ import { HeaderComponent } from './component/header/header.component';
 import { CartComponent } from './component/cart/cart.component';
 import { ProductComponent } from './component/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './component/home/home.component';
+import { FilterPipe } from './component/shared/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './component/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    HomeComponent,
+    FilterPipe,
+    FooterComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
